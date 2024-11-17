@@ -1,7 +1,11 @@
+import Header from './components/header/header';
+import './App.css';
 
 function App() {
   return (
-    <h1>Wow Reddits</h1>
+    <div className="App">
+      <Header />
+    </div>
   );
 }
 
