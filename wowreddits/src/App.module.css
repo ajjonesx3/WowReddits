@@ -1,5 +1,4 @@
 .App {
-    background-color:grey;
     display:grid;
     grid-template-rows: 10em auto;
     margin:0;

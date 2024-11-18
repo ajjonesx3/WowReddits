@@ -1,10 +1,12 @@
 import Header from './components/header/header';
-import './App.css';
+import styles from './App.module.css';
+import MainPage from './pages/mainPage/mainPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Header />
+      <MainPage />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import './header.css';
+import styles from './header.module.css';
 import redditLogo from '../../assets/reddit.svg';
 import wowLogo from '../../assets/wow.svg';
 
@@ -15,7 +15,7 @@ const Header = () => {
     }
 
     return (
-        <div className="header">
+        <div className={styles.header}>
             <img src={redditLogo} alt="reddit logo" style={logoSize}/>
             <h1>Wow Reddits</h1>
             <img src={wowLogo} alt="wow logo" style={logoSize2}/>
