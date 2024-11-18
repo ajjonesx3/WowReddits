@@ -1,5 +1,4 @@
 import style from './mainPage.module.css';
-import SignIn from '../../components/signIn/SignIn';
 import Feed from '../../components/feed/Feed';
 
 

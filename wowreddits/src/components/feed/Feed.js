@@ -9,18 +9,13 @@ const Feed = () => {
         content: "wow look at this guy kill a boar"
     }
 
-    const entry2 = {
-        title: "Guy gets cutting edge",
-        content: "This guy got cutting edge on Raszageth wow!"
-    }
+    const entries_fake = [];
+    entries_fake.push(entry1);
 
-    const entries = [];
-    entries.push(entry1);
-    entries.push(entry2);
 
     return (
         <div className={style.feed}>
-            {entries.map(entry=>{
+            {entries_fake.map(entry=>{
                 return <FeedEntry entry={entry}/>
             })}
         </div>

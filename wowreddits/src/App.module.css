@@ -1,6 +1,6 @@
 .App {
     display:grid;
-    grid-template-rows: 10em auto;
+    grid-template-rows: 12em auto;
     margin:0;
     padding:0;
 }
