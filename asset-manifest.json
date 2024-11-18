@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/WowReddits/static/css/main.f2d39945.css",
+    "main.js": "/WowReddits/static/js/main.f6883c27.js",
+    "index.html": "/WowReddits/index.html",
+    "main.f2d39945.css.map": "/WowReddits/static/css/main.f2d39945.css.map",
+    "main.f6883c27.js.map": "/WowReddits/static/js/main.f6883c27.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f2d39945.css",
+    "static/js/main.f6883c27.js"
+  ]
+}
