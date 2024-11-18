@@ -3,14 +3,11 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:100px 0;
 }
 
 h1 {
     font-size:5em;
     color:#ff6314;
-    height:100%;
-    display:flex;
     justify-content:center;
     align-items:center;
     margin:0;

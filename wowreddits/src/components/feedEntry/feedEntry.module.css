@@ -1,0 +1,19 @@
+.feedEntry {
+    background-color:lightsteelblue;
+    border:3px solid black;
+    border-radius:20px;
+    margin-top:30px;
+}
+
+.title {
+    background-color:tan;
+    font-size:2em;
+    padding:10px 0;
+    padding-left:20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 1px solid black;
+}
+.content {
+    padding:30px;
+}
