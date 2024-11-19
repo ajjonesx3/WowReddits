@@ -15,12 +15,8 @@ const fetchToken = createAsyncThunk(
             body: JSON.stringify({
                 grant_type: "authorization_code",
                 code: code,
-                redirect_uri: "https://ajjonesx3.github.io/WowReddits"
-            }),
-            header: {
-                client_id: "4pbmTOK3SMGrJmKE12E5wA",
-                client_secret: "HiAzVVsiqkt03HusNjAfJB8nb6aGYA",
-            }
+                redirect_uri: "http://localhost:3000/WowReddits",
+            })
         })
         const jsonResponse = await response.json();
         return jsonResponse;
