@@ -10,13 +10,21 @@ const fetchToken = createAsyncThunk(
     'store/fetchToken',
     async (code,thunkAPI) => {
         const baseUrl = "https://www.reddit.com/api/v1/access_token"
+        const credentials = "4pbmTOK3SMGrJmKE12E5wA:HiAzVVsiqkt03HusNjAfJB8nb6aGYA";
+        const uri = "http://localhost:3000/WowReddits";
+        const encodedCredentials = btoa(credentials);
         const response = await fetch(baseUrl,{
             method: "POST",
-            body: JSON.stringify({
-                grant_type: "authorization_code",
-                code: code,
-                redirect_uri: "http://localhost:3000/WowReddits",
-            })
+            body: new URLSearchParams({
+                'grant_type': 'authorization_code',
+                'code':code,
+                'redirect_uri':uri
+            }),
+            headers: {
+                Authorization: "Basic " + encodedCredentials
+            }
+
+
         })
         const jsonResponse = await response.json();
         return jsonResponse;
