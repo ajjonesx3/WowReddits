@@ -2,7 +2,7 @@ import styles from './header.module.css';
 import redditLogo from '../../assets/reddit.svg';
 import wowLogo from '../../assets/wow.svg';
 import SignIn from './SignIn';
-import store from '../../store';
+import store, {fetchToken} from '../../store';
 
 const Header = () => {
 

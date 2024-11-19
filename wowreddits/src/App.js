@@ -13,12 +13,13 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(()=>{
-      if(searchParams.get('code')){
-        const code = searchParams.get('code');
-        store.dispatch(fetchToken(code));
-        navigate('/WowReddits');
-      }
+    if(searchParams.get('code')){
+      const code = searchParams.get('code');
+      store.dispatch(fetchToken(code));
+      navigate('/WowReddits');
+    }
   },[]);
+
 
   return (
     <div className={styles.App}>

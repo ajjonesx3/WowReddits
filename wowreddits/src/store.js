@@ -5,9 +5,9 @@ const initialState = {
     feed: {},
 }
 
-const fetchToken = createAsyncThunk(
+export const fetchToken = createAsyncThunk(
     'store/fetchToken',
-    async (code,thunkAPI) => {
+    async (code) => {
         const baseUrl = "https://www.reddit.com/api/v1/access_token"
         const credentials = "4pbmTOK3SMGrJmKE12E5wA:HiAzVVsiqkt03HusNjAfJB8nb6aGYA";
         const uri = "http://localhost:3000/WowReddits";
@@ -59,5 +59,4 @@ const store = configureStore({
 })
 
 export const {addToFeed,clearFeed} = storeSlice.actions;
-export {fetchToken};
 export default store;
