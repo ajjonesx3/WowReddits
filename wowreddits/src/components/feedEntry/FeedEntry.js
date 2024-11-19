@@ -1,13 +1,18 @@
 import style from './feedEntry.module.css';
+import {useSelector} from 'react-redux';
+import {useEffect} from 'react';
 
 const FeedEntry = ({entry}) => {
+
+    const {title,content} = entry;
+
     return (
         <div className={style.feedEntry}>
             <div className={style.title}>
-                {entry.title}
+                {title}
             </div>
             <div className={style.content}>
-                {entry.content}
+                {content}
             </div>
         </div>
     )

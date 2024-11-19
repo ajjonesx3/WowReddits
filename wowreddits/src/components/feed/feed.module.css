@@ -1,4 +1,13 @@
 .feed {
-    padding-top:2em;
     width: 70%;
+    height:100%;
+    overflow:scroll;
+    -ms-overflow-style: none;
+    scrollbar-width:none;
+    display:flex;
+    flex-direction: column;
+}
+
+.feed::-webkit-scrollbar {
+    display:none;
 }

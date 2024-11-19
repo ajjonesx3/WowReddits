@@ -1,10 +1,11 @@
 .App {
     display:grid;
-    grid-template-rows: 12em auto;
+    grid-template-rows: 20vh 80vh;
     margin:0;
     padding:0;
 }
 
 html {
     background-color:#5b5854;
+    overflow:hidden;
 }

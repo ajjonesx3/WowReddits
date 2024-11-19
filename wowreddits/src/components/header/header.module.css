@@ -25,14 +25,15 @@ h1 {
     background-color:navy;
     padding:10px 0;
     border-radius:10px;
-    border:1px solid black;
+    border:2px solid black;
     color:#ff6314;
     font-size:20px;
+    box-shadow:0 3px black;
 
 }
 
 .signIn:hover {
-    background-color:lightgoldenrodyellow;
+    background-color:blue;
 }
 
 .header a {

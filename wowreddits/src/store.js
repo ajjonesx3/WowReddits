@@ -2,7 +2,8 @@ import {configureStore,createSlice,createAsyncThunk} from '@reduxjs/toolkit';
 
 const initialState = {
     userLoggedIn: false,
-    feed: {},
+    feedObjs: {},
+    access_token: ""
 }
 
 export const fetchToken = createAsyncThunk(
@@ -23,10 +24,15 @@ export const fetchToken = createAsyncThunk(
                 Authorization: "Basic " + encodedCredentials
             }
 
-
         })
-        const jsonResponse = await response.json();
-        return jsonResponse;
+        if(response.ok){
+            const jsonResponse = await response.json();
+            return jsonResponse;
+        } else {
+            return {
+                error: "unknown error"
+            }
+        }
 
     }
 )
@@ -36,7 +42,10 @@ const storeSlice = createSlice({
     initialState,
     reducers: {
         addToFeed(state,action){
-            state.feed[action.payload.id] = action.payload;
+            state.feedObjs = {
+                ...state.feedObjs,
+                [action.payload.id]:action.payload.data
+            }
         },
         clearFeed(state){
             state.feed = {};
@@ -44,10 +53,15 @@ const storeSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchToken.fulfilled, (state,action)=>{
-            state.userLoggedIn = true;
-            state.access_token = action.payload.access_token;
-            state.refresh_token = action.payload.refresh_token;
-            state.expires_in = action.payload.expires_in;
+            if(action.payload.error){
+                console.log("fetch error");
+            } else {
+                console.log(action.payload);
+                state.userLoggedIn = true;
+                state.access_token = action.payload.access_token;
+                state.refresh_token = action.payload.refresh_token;
+                state.expires_in = action.payload.expires_in;
+            }
         })
     }
 });

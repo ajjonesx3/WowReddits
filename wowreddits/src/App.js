@@ -11,11 +11,12 @@ function App() {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(()=>{
     if(searchParams.get('code')){
       const code = searchParams.get('code');
-      store.dispatch(fetchToken(code));
+      dispatch(fetchToken(code));
       navigate('/WowReddits');
     }
   },[]);

@@ -16,11 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const render = () => {
   root.render(
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <React.StrictMode>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </React.StrictMode>
   )
 };
 render();
-
-store.subscribe(render);

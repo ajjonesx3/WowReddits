@@ -3,6 +3,8 @@ import redditLogo from '../../assets/reddit.svg';
 import wowLogo from '../../assets/wow.svg';
 import SignIn from './SignIn';
 import store, {fetchToken} from '../../store';
+import React, {useEffect} from 'react';
+import {useSelector} from 'react-redux';
 
 const Header = () => {
 
@@ -15,7 +17,7 @@ const Header = () => {
         height:"auto"
     }
 
-    console.log(store.getState().store.userLoggedIn);
+    const loggedIn = useSelector(state=>state.store.userLoggedIn);
 
     return (
         <div className={styles.header}>
@@ -24,7 +26,7 @@ const Header = () => {
                 <img src={wowLogo} alt="wow logo" style={logoSize2}/>
             </div>
             <h1>Wow Reddits</h1>
-            {store.getState().store.userLoggedIn ? undefined : <SignIn/>}
+            {loggedIn ? undefined : <SignIn />}
         </div>
     )
 }
