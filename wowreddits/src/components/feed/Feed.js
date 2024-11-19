@@ -1,6 +1,7 @@
 import {useState,useEffect} from 'react';
 import FeedEntry from '../feedEntry/FeedEntry';
 import style from './feed.module.css';
+import store from '../../store';
 
 const Feed = () => {
 
@@ -9,13 +10,11 @@ const Feed = () => {
         content: "wow look at this guy kill a boar"
     }
 
-    const entries_fake = [];
-    entries_fake.push(entry1);
-
+    const feed = store.getState().store.feed;
 
     return (
         <div className={style.feed}>
-            {entries_fake.map(entry=>{
+            {Object.keys(feed).map(entry=>{
                 return <FeedEntry entry={entry}/>
             })}
         </div>

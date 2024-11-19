@@ -3,7 +3,6 @@ import {configureStore,createSlice,createAsyncThunk} from '@reduxjs/toolkit';
 const initialState = {
     userLoggedIn: false,
     feed: {},
-    authData: {}
 }
 
 const fetchToken = createAsyncThunk(
@@ -45,8 +44,10 @@ const storeSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchToken.fulfilled, (state,action)=>{
-            state.authData = action.payload;
-            console.log(action.payload);
+            state.userLoggedIn = true;
+            state.access_token = action.payload.access_token;
+            state.refresh_token = action.payload.refresh_token;
+            state.expires_in = action.payload.expires_in;
         })
     }
 });

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import store from './store';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
+import {Provider} from 'react-redux';
 
 const router = createBrowserRouter([
   {
@@ -15,10 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const render = () => {
   root.render(
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   )
 };
-
 render();
 
 store.subscribe(render);

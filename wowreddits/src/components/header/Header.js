@@ -1,7 +1,8 @@
 import styles from './header.module.css';
 import redditLogo from '../../assets/reddit.svg';
 import wowLogo from '../../assets/wow.svg';
-import {createSearchParams} from 'react-router-dom'
+import SignIn from './SignIn';
+import store from '../../store';
 
 const Header = () => {
 
@@ -14,17 +15,7 @@ const Header = () => {
         height:"auto"
     }
 
-    const baseUrl = "https://www.reddit.com/api/v1/authorize?";
-    const searchParams = createSearchParams({
-        client_id: "4pbmTOK3SMGrJmKE12E5wA",
-        response_type: "code",
-        state: "chicken",
-        redirect_uri: "http://localhost:3000/WowReddits",
-        duration: "permanent",
-        scope: "identity read save vote"
-    });
-
-    const signInUrl = baseUrl + searchParams;
+    console.log(store.getState().store.userLoggedIn);
 
     return (
         <div className={styles.header}>
@@ -33,13 +24,7 @@ const Header = () => {
                 <img src={wowLogo} alt="wow logo" style={logoSize2}/>
             </div>
             <h1>Wow Reddits</h1>
-            <a href={signInUrl}>
-                <div className={styles.signIn}>
-                    Sign In
-                </div>
-            </a>
-
-
+            {store.getState().store.userLoggedIn ? undefined : <SignIn/>}
         </div>
     )
 }
