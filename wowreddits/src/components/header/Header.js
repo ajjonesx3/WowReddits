@@ -19,7 +19,7 @@ const Header = () => {
         client_id: "4pbmTOK3SMGrJmKE12E5wA",
         response_type: "code",
         state: "chicken",
-        redirect_uri: "https://ajjonesx3.github.io/WowReddits/",
+        redirect_uri: "https://ajjonesx3.github.io/WowReddits",
         duration: "permanent",
         scope: "identity read save vote"
     });
