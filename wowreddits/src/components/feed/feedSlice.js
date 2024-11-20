@@ -15,20 +15,15 @@ export const fetchData = createAsyncThunk(
         const response = await fetch(fullUrl,{
             method: "GET",
             headers: new Headers({
-                Authorization: "Bearer " + token,
-                "User-Agent": "WowReddits/0.1 by yo_smite"
+                Authorization: "Bearer " + token
             })
         })
         if(response.ok){
-            const jsonResponse = await response.json();
-            console.log(jsonResponse);
+            const jsonResponse = response.json();
             return jsonResponse;
         } else {
-            return {
-                error: "unknown error"
-            }
+            return {error:response.status}
         }
-
     }
 )
 
@@ -49,7 +44,7 @@ const feedSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchData.fulfilled, (state,action)=>{
             if(action.payload.error){
-                console.log("Error occured while fetching data");
+                console.log("Response code: " + action.payload.error);
             } else {
                 console.log("Changing state of dataFetched");
                 state.dataFetched = action.payload;

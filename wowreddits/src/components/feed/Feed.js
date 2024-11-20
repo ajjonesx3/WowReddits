@@ -17,8 +17,6 @@ const Feed = () => {
         if(loggedIn){
             console.log(token)
             dispatch(fetchData(token));
-        } else {
-            dispatch(clearFeed);//check this for errors later
         }
     },[loggedIn,dispatch,token]);
 
