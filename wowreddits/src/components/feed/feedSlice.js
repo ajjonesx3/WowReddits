@@ -13,8 +13,10 @@ export const fetchData = createAsyncThunk(
         const endpoint = "/api/v1/me";
         const fullUrl = baseUrl + endpoint;
         const response = await fetch(fullUrl,{
+            method: "GET",
             headers: new Headers({
-                'Authorization':'Bearer ' + token
+                Authorization: "Bearer " + token,
+                "User-Agent": "WowReddits/0.1 by yo_smite"
             })
         })
         if(response.ok){
