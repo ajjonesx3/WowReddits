@@ -1,26 +1,25 @@
 import {useState,useEffect} from 'react';
 import FeedEntry from '../feedEntry/FeedEntry';
 import style from './feed.module.css';
-import store,{addToFeed} from '../../store';
+import {addToFeed,clearFeed,fetchData} from './feedSlice';
 import {useSelector,useDispatch} from 'react-redux'; 
 
 const Feed = () => {
 
-    const currentFeed = useSelector(state=>state.store.feedObjs);
+    const currentFeed = useSelector(state=>state.feed.feedObjs);
     const token = useSelector(state=>state.store.access_token);
+    const loggedIn = useSelector(state=>state.store.userLoggedIn);
+    const subreddits = useSelector(state=>state.feed.subreddits);
+    const data = useSelector(state=>state.feed.dataFetched);
     const dispatch = useDispatch();
 
-    let start = token.slice(0,20);
-
     useEffect(()=>{
-        dispatch(addToFeed({
-            id:"001",
-            data: {
-                title:"Test",
-                content: "TestContent"
-            }
-        }));
-    },[token])
+        if(loggedIn){
+            dispatch(fetchData(token));
+        } else {
+            dispatch(clearFeed);//check this for errors later
+        }
+    },[loggedIn,dispatch,token]);
 
     return (
         <div className={style.feed}>
