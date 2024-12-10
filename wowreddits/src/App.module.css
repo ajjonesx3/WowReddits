@@ -1,11 +1,12 @@
 .App {
     display:grid;
-    grid-template-rows: 20vh 80vh;
+    grid-template-rows:1fr 8fr;
     margin:0;
     padding:0;
+    height:100vh;
+    overflow:hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 html {
     background-color:#5b5854;
-    overflow:hidden;
 }

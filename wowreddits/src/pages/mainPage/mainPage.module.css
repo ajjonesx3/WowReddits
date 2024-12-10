@@ -1,6 +1,60 @@
 .mainPage {
     background-color:transparent;
-    display:flex;
-    justify-content:center;
-    height: 100%;
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    overflow:scroll;
+}
+
+.leftColumn {
+    border-right:3px solid black;
+    margin-right:5%;
+}
+
+.leftColumn ul {
+    font-size:1.5em;
+    font-weight:bold;
+    text-shadow: black 0 3px;
+    text-align:right;
+    margin-right:1em;
+    line-height:2em;
+}
+
+.leftColumn ul a {
+    text-decoration:none;
+}
+
+.leftColumn ul li {
+    list-style:none;
+    color:white;
+    text-decoration:none;
+}
+
+.leftColumn ul li:hover {
+    color:#ff6314;
+    cursor:pointer;
+}
+
+.leftColumnTitle{
+    color: #ff6314;
+    text-align:center;
+    border-bottom: 1px solid black;
+    border-bottom-style:dashed;
+    font-size:1.3em;
+    padding:0;
+    margin:0;
+}
+
+.leftColumnTitle h2 {
+    margin: .3em 0;
+}
+
+.addSubButton {
+    font-size:2em;
+    color:grey;
+    text-shadow:black 0px 0px 2px;
+}
+
+.addSubButton:hover {
+    cursor:pointer;
+    color:#f5e7c9;
 }

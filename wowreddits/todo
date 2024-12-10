@@ -1,0 +1,6 @@
+
+Parse Markdown of selftext to display properly
+
+Seperate main page into 2 columns, left one shows all subreddits its retrieving and right shows the feed
+
+Make individual pages for each post, which shows comments underneath

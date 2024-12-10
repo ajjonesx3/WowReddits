@@ -16,6 +16,7 @@ function App() {
   const expires_in = useSelector(state=>state.store.expires_in);
   const refresh_token = useSelector(state=>state.store.refresh_token);
 
+  /*
   useEffect(()=>{
     if(searchParams.get('code')){
       const code = searchParams.get('code');
@@ -23,6 +24,7 @@ function App() {
       navigate('/WowReddits');
     }
   },[]);
+  */
 
 
   return (

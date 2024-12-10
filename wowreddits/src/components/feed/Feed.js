@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react';
 import FeedEntry from '../feedEntry/FeedEntry';
 import style from './feed.module.css';
-import {addToFeed,clearFeed,fetchData} from './feedSlice';
+import {addToFeed,fetchFeed, clearFeed,fetchData} from './feedSlice';
 import {useSelector,useDispatch} from 'react-redux'; 
 
 const Feed = () => {
@@ -14,16 +14,27 @@ const Feed = () => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        if(loggedIn){
-            console.log(token)
-            dispatch(fetchData(token));
+        if(true){
+            //console.log(token)
+            //dispatch(fetchData(token));
+            console.log('module loaded');
+            subreddits.forEach(sub=>dispatch(fetchFeed(sub)));
+            /*
+            dispatch(addToFeed({
+                id:"gay",
+                data:{
+                    title:"Reddit sucks",
+                    content: "Reddit wont let me use their API"
+                }
+            }))
+            */
         }
-    },[loggedIn,dispatch,token]);
+    },[subreddits]);
 
     return (
         <div className={style.feed}>
             {Object.keys(currentFeed).map(entry=>{
-                return <FeedEntry entry={currentFeed[entry]}/>
+                return <FeedEntry key={entry} id={entry} entry={currentFeed[entry]}/>
             })}
         </div>
     )

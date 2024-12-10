@@ -19,6 +19,8 @@ const Header = () => {
 
     const loggedIn = useSelector(state=>state.store.userLoggedIn);
 
+    // Sign in button element but after <h1>Wow Reddits</h1>
+    //{loggedIn ? undefined : <SignIn />}
     return (
         <div className={styles.header}>
             <div className={styles.logos}>
@@ -26,7 +28,6 @@ const Header = () => {
                 <img src={wowLogo} alt="wow logo" style={logoSize2}/>
             </div>
             <h1>Wow Reddits</h1>
-            {loggedIn ? undefined : <SignIn />}
         </div>
     )
 }
