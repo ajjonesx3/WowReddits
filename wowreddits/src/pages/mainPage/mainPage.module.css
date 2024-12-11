@@ -3,22 +3,27 @@
     display:grid;
     grid-template-columns:1fr 3fr;
     overflow:hidden;
-    background: rgb(236,231,218);
-    background: radial-gradient(circle, rgba(236,231,218,1) 90%, rgba(203,188,159,1) 100%);
     border-top:1px solid saddlebrown;
 }
 
 .leftColumn {
-    margin-right:5%;
     background: rgb(232,220,208);
     background: radial-gradient(circle, rgba(232,220,208,1) 80%, rgba(195,185,167,1) 100%);
     box-shadow:0 0 15px saddlebrown;
+    z-index: 3;
+}
+
+.rightSide {
+    height:100%;
+    overflow:hidden;
+    background: rgb(232,220,208);
+    background: radial-gradient(circle, rgba(232,220,208,1) 80%, rgba(195,185,167,1) 100%);
 }
 
 .leftColumn ul {
     font-size:1.5em;
     font-weight:bold;
-    text-shadow: black 0 1px;
+    letter-spacing: 1px;
     text-align:right;
     margin-right:1em;
     line-height:2em;
@@ -63,4 +68,5 @@
 .addSubButton:hover {
     cursor:pointer;
     color:#f5e7c9;
+    text-shadow:0 0 black 3px;
 }

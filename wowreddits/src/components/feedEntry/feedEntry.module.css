@@ -6,6 +6,12 @@
     justify-self:center;
     border-radius:7px;
     box-shadow: 0 0 15px #454043;
+    transition:box-shadow 200ms ease;
+}
+
+.feedEntry:hover {
+    box-shadow: 0 0 25px saddlebrown;
+    cursor:pointer;
 }
 
 .title {

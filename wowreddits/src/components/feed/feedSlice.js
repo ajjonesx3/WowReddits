@@ -2,7 +2,7 @@ import {createSlice,createAsyncThunk} from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-    subreddits: ["CompetitiveWow","wow"],
+    subreddits: ["worldofwarcraft","wow","competitivewow","wowservers","wowguilds"],
     feedObjs: {},
     dataFetched: {}
 }
@@ -17,13 +17,14 @@ const createFeedObject = (state,payload) => {
         payload.data.children.forEach(child=>{
             let data = child.data;
             if(data.author!=="AutoModerator"){
-                //console.log(data);
+                console.log(data);
 
                 let nfo = {
                     title: data.title,
                     author: data.author,
                     selftext: parse(data.selftext),
                     subreddit: data.subreddit,
+                    created: data.created_utc,
                     media: {}
                 }
                 if(data.post_hint === "image"){
@@ -55,13 +56,10 @@ const createFeedObject = (state,payload) => {
                         srcUrl: temp[0].srcUrl
                     }
                 }
-
                 state.feedObjs[data.id] = nfo
             }
         })
-
     }
-
 }
 
 export const fetchFeed = createAsyncThunk(
@@ -112,9 +110,6 @@ const feedSlice = createSlice({
                 ...state.feedObjs,
                 [action.payload.id]:action.payload.data
             }
-        },
-        clearFeed(state){
-            state.feedObjs = {};
         }
     },
     extraReducers: (builder) => {
