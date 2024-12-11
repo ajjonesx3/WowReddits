@@ -1,6 +1,6 @@
 .App {
     display:grid;
-    grid-template-rows:1fr 8fr;
+    grid-template-rows:1fr 9fr;
     margin:0;
     padding:0;
     height:100vh;

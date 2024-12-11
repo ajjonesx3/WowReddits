@@ -9,11 +9,11 @@ import {useSelector} from 'react-redux';
 const Header = () => {
 
     const logoSize = {
-        width: "13em",
+        width: "9.1em",
         height: "auto"
     }
     const logoSize2 = {
-        width:"5.85em",
+        width:"4.1em",
         height:"auto"
     }
 

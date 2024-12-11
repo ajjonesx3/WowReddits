@@ -31,10 +31,21 @@ const Feed = () => {
         }
     },[subreddits]);
 
+    const dividerStyle = {
+        width:"95%",
+        height:"1px",
+        borderTop:"1px solid black"
+    }
+
     return (
         <div className={style.feed}>
             {Object.keys(currentFeed).map(entry=>{
-                return <FeedEntry key={entry} id={entry} entry={currentFeed[entry]}/>
+                return (
+                    <>
+                        <FeedEntry key={entry} id={entry} entry={currentFeed[entry]}/>
+                        <div style={dividerStyle}></div>
+                    </>
+                )
             })}
         </div>
     )
