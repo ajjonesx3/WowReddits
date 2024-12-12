@@ -7,22 +7,18 @@ const initialState = {
     dataFetched: {}
 }
 
-const parse = str => {
-    return str.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
-}
-
 const createFeedObject = (state,payload) => {
     if(payload.kind == "Listing"){
 
         payload.data.children.forEach(child=>{
             let data = child.data;
             if(data.author!=="AutoModerator"){
-                console.log(data);
 
                 let nfo = {
                     title: data.title,
                     author: data.author,
-                    selftext: parse(data.selftext),
+                    selftext: data.selftext,
+                    selftext_html: data.selftext_html,
                     subreddit: data.subreddit,
                     created: data.created_utc,
                     media: {}
@@ -66,7 +62,6 @@ export const fetchFeed = createAsyncThunk(
     'feed/fetchFeed',
     async (subreddit) => {
         const url = "https://www.reddit.com/r/" + subreddit + '.json';
-        console.log(`Fetching ${subreddit}`);
         const response = await fetch(url,{
             method: "GET"
         });
@@ -117,7 +112,6 @@ const feedSlice = createSlice({
             if(action.payload.error){
                 console.log("Response code: " + action.payload.error);
             } else {
-                console.log("Changing state of dataFetched");
                 state.dataFetched = action.payload;
             }
         })

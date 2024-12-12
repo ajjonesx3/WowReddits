@@ -1,6 +1,22 @@
 
 Parse Markdown of selftext to display properly
 
-Seperate main page into 2 columns, left one shows all subreddits its retrieving and right shows the feed
-
 Make individual pages for each post, which shows comments underneath
+
+
+FIX SORTING
+
+    When I receive back json data from API I am just adding each one to the store by id,
+    and then sorting the whole thing.
+
+    Instead keep a store variable for sortedFeed that way I can return the new subreddit feed from createFeedObjects and sort ONLY JUST THAT.
+
+    Since the rest of the feed from all the previous subreddits is already sorted. I just have to sort the new one,
+    then I have 2 sorted arrays (sortedFeed, and the new one).
+
+    I just do the last step of merge sort on both arrays and save it as sortedFeed.
+    
+    n=whole feed
+    m=sub feed
+    re-sorting the whole feed every time I make a new sub feed would take O(nlogn),
+    while this way would be just O(n+mlogm)

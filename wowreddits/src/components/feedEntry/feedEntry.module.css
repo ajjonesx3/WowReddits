@@ -56,3 +56,15 @@
 .content a:hover {
     cursor:pointer;
 }
+
+.content h1 {
+    font-size:1.2em;
+    color:darkcyan;
+    text-shadow:0 1px black;
+}
+
+.content h2 {
+    font-size:1.2em;
+    color:rgb(50, 104, 104);
+    text-shadow:0 1px black;
+}
