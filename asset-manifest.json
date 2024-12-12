@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/WowReddits/static/css/main.16d83e06.css",
-    "main.js": "/WowReddits/static/js/main.a835e92d.js",
+    "main.css": "/WowReddits/static/css/main.13663e81.css",
+    "main.js": "/WowReddits/static/js/main.4eb13e8b.js",
     "static/media/wow.svg": "/WowReddits/static/media/wow.8bd0d3d39183ca446d2090c7a7d962f8.svg",
     "static/media/reddit.svg": "/WowReddits/static/media/reddit.1623577b2df0ce0f6fe2ef832acda9ba.svg",
     "index.html": "/WowReddits/index.html",
-    "main.16d83e06.css.map": "/WowReddits/static/css/main.16d83e06.css.map",
-    "main.a835e92d.js.map": "/WowReddits/static/js/main.a835e92d.js.map"
+    "main.13663e81.css.map": "/WowReddits/static/css/main.13663e81.css.map",
+    "main.4eb13e8b.js.map": "/WowReddits/static/js/main.4eb13e8b.js.map"
   },
   "entrypoints": [
-    "static/css/main.16d83e06.css",
-    "static/js/main.a835e92d.js"
+    "static/css/main.13663e81.css",
+    "static/js/main.4eb13e8b.js"
   ]
 }
